@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ContactListItem.module.css";
+import PropTypes from "prop-types";
 
 const ContactListItem = ({ name, number, onRemove }) => (
   <li className={styles.ContactListItem}>
@@ -17,5 +18,11 @@ const ContactListItem = ({ name, number, onRemove }) => (
     </button>
   </li>
 );
+
+ContactListItem.propTypes = {
+  name: PropTypes.string,
+  number: PropTypes.string,
+  onRemove: PropTypes.func.isRequired,
+};
 
 export default ContactListItem;
